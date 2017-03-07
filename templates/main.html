@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}VOCA TEST{% endblock %}
+
+{% block content %}
+    <div class="ui container">
+        <div class="ui raised middle segment">
+            <h2 class="ui header">시험지 생성하기</h2>
+            <div class="ui divider"></div>
+            <form action="{% url 'show_test_paper' %}" method="post" class="ui equal width form">{% csrf_token %}
+                <h3 class="ui header">출제 범위 입력</h3>
+                <div class="fields">
+                    <div class="field">
+                        <label>시작일</label>
+                        <input type="text" name="first" placeholder="1" required>
+                    </div>
+                    <div class="field">
+                        <label>마감일</label>
+                        <input type="text" name="last" placeholder="30" required>
+                    </div>
+
+                </div>
+                <div class="ui container center aligned">
+                    <button class="ui button blue" type="submit">시험지 생성하기</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+{% endblock %}

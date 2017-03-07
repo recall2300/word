@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}VOCA TEST PAPER{% endblock %}
+
+{% block content %}
+    <div class="ui container">
+        <div class="ui raised middle segment">
+            <div class="ui button blue show-def">뜻 보기</div>
+            <a class="ui button" href="/">홈으로</a>
+            <table class="ui very basic collapsing celled table">
+                <thead>
+                <tr>
+                    <th>DAY</th>
+                    <th>단어</th>
+                    <th>뜻</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for word in word_list %}
+                    <tr>
+                        <td>{{ word.day }}</td>
+                        <td>{{ word.word }}</td>
+                        <td class='td-def'>{{ word.definition }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}ADMIN{% endblock %}
+
+{% block content %}
+    <div class="ui container">
+        <div class="ui raised middle segment">
+            <h2 class="ui header">단어 생성하기</h2>
+            <div class="ui divider"></div>
+            <form method="post" action="{% url 'create_voca' %}" class="ui equal width form">{% csrf_token %}
+                <h3 class="ui header">출제 범위 입력</h3>
+                <div class="fields">
+                    <div class="field">
+                        <label>DAY</label>
+                        <input type="text" name="day" placeholder="1" required>
+                    </div>
+                    {#                    <div class="field">#}
+                    {#                        <label>입력단어갯수</label>#}
+                    {#                        <div class="ui selection search dropdown">#}
+                    {#                            <input type="hidden" name="word">#}
+                    {#                            <i class="dropdown icon"></i>#}
+                    {#                            <div class="default text">갯수를 입력하거나 선택</div>#}
+                    {#                            <div class="menu">#}
+                    {#                                {% for dd in dd_list %}#}
+                    {#                                    <div class="item" data-value="{{ dd }}">{{ dd }}</div>#}
+                    {#                                {% endfor %}#}
+                    {#                            </div>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+                </div>
+
+                {% for dd in dd_list %}
+                    <div class="fields word-def">
+                        <div class="field">
+                            <label>{{ dd }}. 단어</label>
+                            <input type="text" name="word">
+                        </div>
+                        <div class="field">
+                            <label>{{ dd }}. 뜻</label>
+                            <input type="text" name="def">
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="ui container center aligned">
+                    <button class="ui button blue" type="submit">단어 생성하기</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+{% endblock %}
