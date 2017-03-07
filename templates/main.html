@@ -4,6 +4,17 @@
 
 {% block content %}
     <div class="ui container">
+        <div class="ui info message">
+            <div class="header">
+                현재
+            </div>
+            <ul class="list">
+                <li>{{ max_day }}일차까지 입력되었습니다.</li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <div class="ui container">
         <div class="ui raised middle segment">
             <h2 class="ui header">시험지 생성하기</h2>
             <div class="ui divider"></div>
@@ -16,7 +27,7 @@
                     </div>
                     <div class="field">
                         <label>마감일</label>
-                        <input type="text" name="last" placeholder="30" required>
+                        <input type="text" name="last" placeholder="{{ max_day }}" required>
                     </div>
 
                 </div>
@@ -24,7 +35,13 @@
                     <button class="ui button blue" type="submit">시험지 생성하기</button>
                 </div>
             </form>
-
+            <div class="ui container right aligned">
+                <a class="ui button red" href="/admin">ADMIN</a>
+            </div>
+            <div class="ui divider"></div>
+            <div class="ui container center aligned">
+                <a href="https://github.com/recall2300/word"><i class="large github icon"></i></a>
+            </div>
         </div>
     </div>
 {% endblock %}

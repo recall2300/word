@@ -1,13 +1,14 @@
 from django.shortcuts import render, HttpResponseRedirect
 from django.contrib.admin.views.decorators import staff_member_required
 from .models import Vocabulary
+from django.db.models import Max
 
 
 # Create your views here.
 
 def main(request):
-    word = {'hello': 'hi'}
-    return render(request, 'main.html', word)
+    max_day = Vocabulary.objects.all().aggregate(Max('day'))['day__max']
+    return render(request, 'main.html', {'max_day': max_day})
 
 
 @staff_member_required
