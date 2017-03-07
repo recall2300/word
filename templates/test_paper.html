@@ -10,6 +10,7 @@
             <table class="ui very basic collapsing celled table">
                 <thead>
                 <tr>
+                    <th>count</th>
                     <th>DAY</th>
                     <th>단어</th>
                     <th>뜻</th>
@@ -18,6 +19,7 @@
                 <tbody>
                 {% for word in word_list %}
                     <tr>
+                        <td>{{ forloop.counter }}</td>
                         <td>{{ word.day }}</td>
                         <td>{{ word.word }}</td>
                         <td class='td-def'>{{ word.definition }}</td>
