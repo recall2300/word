@@ -7,26 +7,52 @@
         <div class="ui raised middle segment">
             <div class="ui button blue show-def">뜻 보기</div>
             <a class="ui button" href="/">홈으로</a>
-            <table class="ui very compact small basic collapsing celled table">
-                <thead>
-                <tr>
-                    <th>count</th>
-                    <th>day</th>
-                    <th>단어</th>
-                    <th>뜻</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for word in word_list %}
-                    <tr>
-                        <td>{{ forloop.counter }}</td>
-                        <td>{{ word.day }}</td>
-                        <td>{{ word.word }}</td>
-                        <td class='td-def'>{{ word.definition }}</td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+            <div class="ui grid">
+                <div class="eight wide column">
+                    <table class="ui very compact small basic collapsing celled table">
+                        <thead>
+                        <tr>
+                            <th>count</th>
+                            <th>day</th>
+                            <th>단어</th>
+                            <th>뜻</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for word in word_list1 %}
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{ word.day }}</td>
+                                <td>{{ word.word }}</td>
+                                <td class='td-def'>{{ word.definition }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="eight wide column">
+                    <table class="ui very compact small basic collapsing celled table">
+                        <thead>
+                        <tr>
+                            <th>count</th>
+                            <th>day</th>
+                            <th>단어</th>
+                            <th>뜻</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for word in word_list2 %}
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{ word.day }}</td>
+                                <td>{{ word.word }}</td>
+                                <td class='td-def'>{{ word.definition }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

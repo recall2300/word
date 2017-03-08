@@ -23,7 +23,10 @@ def show_test_paper(request):
         last = int(request.POST.get('last'))
         word_count = int(request.POST.get('word_count'))
         word_list = Vocabulary.objects.filter(day__gte=first).filter(day__lte=last).order_by('?')[:word_count]
-        return render(request, 'test_paper.html', {'word_list': word_list})
+        list_length = len(word_list)
+        word_list1 = word_list[:int(list_length/2)]
+        word_list2 = word_list[int(list_length/2):]
+        return render(request, 'test_paper.html', {'word_list1': word_list1, 'word_list2':word_list2})
     else:
         return HttpResponseRedirect('/')
 
