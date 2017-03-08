@@ -21,7 +21,8 @@ def show_test_paper(request):
     if request.method == "POST":
         first = int(request.POST.get("first"))
         last = int(request.POST.get('last'))
-        word_list = Vocabulary.objects.filter(day__gte=first).filter(day__lte=last).order_by('?')
+        word_count = int(request.POST.get('word_count'))
+        word_list = Vocabulary.objects.filter(day__gte=first).filter(day__lte=last).order_by('?')[:word_count]
         return render(request, 'test_paper.html', {'word_list': word_list})
     else:
         return HttpResponseRedirect('/')
