@@ -23,12 +23,38 @@
                 <div class="fields">
                     <div class="field">
                         <label>시작일</label>
-                        <input type="text" name="first" placeholder="1" required>
+                        <div class="ui fluid search selection dropdown">
+                            <input type="hidden" name="first">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">1</div>
+                            <div class="menu">
+                                {% for day in day_range %}
+                                    <div class="item" data-value="{{ day }}">{{ day }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
                     </div>
                     <div class="field">
-                        <label>마감일</label>
-                        <input type="text" name="last" placeholder="{{ max_day }}" required>
+                        <label>종료일</label>
+                        <div class="ui fluid search selection dropdown">
+                            <input type="hidden" name="last" >
+                            <i class="dropdown icon"></i>
+                            <div class="default text">{{ max_day }}</div>
+                            <div class="menu">
+                                {% for day in day_range %}
+                                    <div class="item" data-value="{{ day }}">{{ day }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
                     </div>
+{#                    <div class="field">#}
+{#                        <label>시작일</label>#}
+{#                        <input type="text" name="first" placeholder="1" required>#}
+{#                    </div>#}
+{#                    <div class="field">#}
+{#                        <label>마감일</label>#}
+{#                        <input type="text" name="last" placeholder="{{ max_day }}" required>#}
+{#                    </div>#}
                     <div class="field">
                         <label>생성 단어 개수</label>
                         <input type="text" name="word_count" placeholder="1일당 30개를 추천" required>

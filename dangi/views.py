@@ -8,7 +8,8 @@ from django.db.models import Max
 
 def main(request):
     max_day = Vocabulary.objects.all().aggregate(Max('day'))['day__max']
-    return render(request, 'main.html', {'max_day': max_day})
+    day_range = list(range(1, max_day + 1))
+    return render(request, 'main.html', {'max_day': max_day, 'day_range': day_range})
 
 
 @staff_member_required
@@ -24,9 +25,9 @@ def show_test_paper(request):
         word_count = int(request.POST.get('word_count'))
         word_list = Vocabulary.objects.filter(day__gte=first).filter(day__lte=last).order_by('?')[:word_count]
         list_length = len(word_list)
-        word_list1 = word_list[:int(list_length/2)]
-        word_list2 = word_list[int(list_length/2):]
-        return render(request, 'test_paper.html', {'word_list1': word_list1, 'word_list2':word_list2})
+        word_list1 = word_list[:int(list_length / 2)]
+        word_list2 = word_list[int(list_length / 2):]
+        return render(request, 'test_paper.html', {'word_list1': word_list1, 'word_list2': word_list2})
     else:
         return HttpResponseRedirect('/')
 
