@@ -12,6 +12,9 @@ voca.basic.ready = function () {
     $('.show-def').on('click', function(){
         $('.td-def').attr('style', 'visibility:initial');
     });
+    $('.hide-write').on('click', function(){
+        $('.td-write').attr('style', 'visibility:hidden;');
+    });
 
 };
 

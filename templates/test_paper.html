@@ -6,6 +6,7 @@
     <div class="ui container">
         <div class="ui raised middle segment">
             <div class="ui button blue show-def">뜻 보기</div>
+            <div class="ui button red hide-write">작성 숨기기</div>
             <a class="ui button" href="/">홈으로</a>
             <div class="ui grid">
                 <div class="eight wide column">
@@ -15,7 +16,7 @@
                             <th>count</th>
                             <th>day</th>
                             <th>단어</th>
-                            <th>작성</th>
+                            <th class="td-write">작성</th>
                             <th>뜻</th>
                         </tr>
                         </thead>
@@ -25,7 +26,7 @@
                                 <td>{{ forloop.counter }}</td>
                                 <td>{{ word.day }}</td>
                                 <td>{{ word.word }}</td>
-                                <td>
+                                <td  class="td-write">
                                     <div class="ui mini input">
                                         <input type="text">
                                     </div>
@@ -43,7 +44,7 @@
                             <th>count</th>
                             <th>day</th>
                             <th>단어</th>
-                            <th>작성</th>
+                            <th class="td-write">작성</th>
                             <th>뜻</th>
                         </tr>
                         </thead>
@@ -53,7 +54,7 @@
                                 <td>{{ forloop.counter }}</td>
                                 <td>{{ word.day }}</td>
                                 <td>{{ word.word }}</td>
-                                <td>
+                                <td class="td-write">
                                     <div class="ui mini input">
                                         <input type="text">
                                     </div>
