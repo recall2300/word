@@ -2,6 +2,8 @@ from django.shortcuts import render, HttpResponseRedirect
 from django.contrib.admin.views.decorators import staff_member_required
 from .models import Vocabulary
 from django.db.models import Max
+import csv
+from django.http import HttpResponse
 
 
 # Create your views here.
@@ -48,3 +50,16 @@ def create_voca(request):
         return HttpResponseRedirect('/admin')
     else:
         return HttpResponseRedirect('/')
+
+
+def export_csv(request):
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="somefilename.csv"'
+
+    writer = csv.writer(response)
+    writer.whiterow(['id', 'day', 'word', 'definition'])
+    all_voca = Vocabulary.objects.all()
+    for voca in all_voca:
+        list = [voca.id, voca.day, voca.word, voca.definition]
+        writer.whiterow(list)
+    return response

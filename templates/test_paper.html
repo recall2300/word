@@ -15,6 +15,7 @@
                             <th>count</th>
                             <th>day</th>
                             <th>단어</th>
+                            <th>작성</th>
                             <th>뜻</th>
                         </tr>
                         </thead>
@@ -24,6 +25,11 @@
                                 <td>{{ forloop.counter }}</td>
                                 <td>{{ word.day }}</td>
                                 <td>{{ word.word }}</td>
+                                <td>
+                                    <div class="ui input">
+                                        <input type="text">
+                                    </div>
+                                </td>
                                 <td class='td-def'>{{ word.definition }}</td>
                             </tr>
                         {% endfor %}
@@ -37,6 +43,7 @@
                             <th>count</th>
                             <th>day</th>
                             <th>단어</th>
+                            <th>작성</th>
                             <th>뜻</th>
                         </tr>
                         </thead>
@@ -46,6 +53,11 @@
                                 <td>{{ forloop.counter }}</td>
                                 <td>{{ word.day }}</td>
                                 <td>{{ word.word }}</td>
+                                <td>
+                                    <div class="ui input">
+                                        <input type="text">
+                                    </div>
+                                </td>
                                 <td class='td-def'>{{ word.definition }}</td>
                             </tr>
                         {% endfor %}

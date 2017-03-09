@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^create/$', views.create_voca, name='create_voca'),
     url(r'^admin/', views.admin),
     url(r'^admin2/', admin.site.urls),
+    url(r'^testpage/', views.export_csv, name='export_csv'),
 ]
