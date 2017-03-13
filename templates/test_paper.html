@@ -5,7 +5,7 @@
 {% block content %}
     <div class="ui container">
         <div class="ui raised middle segment">
-        <div class="table-option">
+        <div class="ui container table-option">
             <div class="ui button black hide-order">카운트 숨기기</div>
             <div class="ui button teal hide-day">날짜 숨기기</div>
             <div class="ui button red hide-write">작성 숨기기</div>
@@ -15,9 +15,9 @@
             <a class="ui button" href="/">홈으로</a>
         </div>
 
-            <div class="ui grid">
-                <div class="eight wide column">
-                    <table class="ui very compact small basic collapsing celled table">
+            <div class="ui stackable two column grid">
+                <div class="column">
+                    <table class="ui very compact small basic celled table">
                         <thead class="table-head">
                         <tr>
                             <th class="td-order">count</th>
@@ -44,8 +44,8 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="eight wide column">
-                    <table class="ui very compact small basic collapsing celled table">
+                <div class="column">
+                    <table class="ui very compact small basic celled table">
                         <thead class="table-head">
                         <tr>
                             <th class="td-order">count</th>
