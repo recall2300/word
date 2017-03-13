@@ -9,11 +9,23 @@ voca.basic.ready = function () {
             console.log($('.word-def'));
         }
     });
-    $('.show-def').on('click', function(){
+    $('.show-def').on('click', function () {
         $('.td-def').attr('style', 'visibility:initial');
     });
-    $('.hide-write').on('click', function(){
+    $('.hide-table-head').on('click', function () {
+        $('.table-head').attr('style', 'display:none;');
+    });
+    $('.hide-table-option').on('click', function () {
+        $('.table-option').attr('style', 'display:none;');
+    });
+    $('.hide-write').on('click', function () {
         $('.td-write').attr('style', 'display:none;');
+    });
+    $('.hide-day').on('click', function () {
+        $('.td-day').attr('style', 'display:none;');
+    });
+    $('.hide-order').on('click', function () {
+        $('.td-order').attr('style', 'display:none;');
     });
 
 };

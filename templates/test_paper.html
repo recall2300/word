@@ -5,16 +5,23 @@
 {% block content %}
     <div class="ui container">
         <div class="ui raised middle segment">
-            <div class="ui button blue show-def">뜻 보기</div>
+        <div class="table-option">
+            <div class="ui button black hide-order">카운트 숨기기</div>
+            <div class="ui button teal hide-day">날짜 숨기기</div>
             <div class="ui button red hide-write">작성 숨기기</div>
+            <div class="ui button green hide-table-head">표 헤드 숨기기</div>
+            <div class="ui button blue show-def">뜻 보기</div>
+            <div class="ui button purple hide-table-option">옵션 숨기기</div>
             <a class="ui button" href="/">홈으로</a>
+        </div>
+
             <div class="ui grid">
                 <div class="eight wide column">
                     <table class="ui very compact small basic collapsing celled table">
-                        <thead>
+                        <thead class="table-head">
                         <tr>
-                            <th>count</th>
-                            <th>day</th>
+                            <th class="td-order">count</th>
+                            <th class="td-day">day</th>
                             <th>단어</th>
                             <th class="td-write">작성</th>
                             <th>뜻</th>
@@ -23,10 +30,10 @@
                         <tbody>
                         {% for word in word_list1 %}
                             <tr>
-                                <td>{{ forloop.counter }}</td>
-                                <td>{{ word.day }}</td>
+                                <td class="td-order">{{ forloop.counter }}</td>
+                                <td class="td-day">{{ word.day }}</td>
                                 <td>{{ word.word }}</td>
-                                <td  class="td-write">
+                                <td class="td-write">
                                     <div class="ui mini input">
                                         <input type="text">
                                     </div>
@@ -39,10 +46,10 @@
                 </div>
                 <div class="eight wide column">
                     <table class="ui very compact small basic collapsing celled table">
-                        <thead>
+                        <thead class="table-head">
                         <tr>
-                            <th>count</th>
-                            <th>day</th>
+                            <th class="td-order">count</th>
+                            <th class="td-day">day</th>
                             <th>단어</th>
                             <th class="td-write">작성</th>
                             <th>뜻</th>
@@ -51,8 +58,8 @@
                         <tbody>
                         {% for word in word_list2 %}
                             <tr>
-                                <td>{{ forloop.counter }}</td>
-                                <td>{{ word.day }}</td>
+                                <td class="td-order">{{ forloop.counter }}</td>
+                                <td class="td-day">{{ word.day }}</td>
                                 <td>{{ word.word }}</td>
                                 <td class="td-write">
                                     <div class="ui mini input">
